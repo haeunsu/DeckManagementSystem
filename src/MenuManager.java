@@ -6,7 +6,8 @@ public class MenuManager {
 		System.out.println("2. Delete Decks");
 		System.out.println("3. Edit Decks");
 		System.out.println("4. View Decks");
-		System.out.println("5. Exit");
+		System.out.println("5. Show a Menu");
+		System.out.println("6. Exit");
 	}
 
 }
