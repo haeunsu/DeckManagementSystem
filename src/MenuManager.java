@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class MenuManager {
 	public static void main(String[] args) {
-		int num = 0;
 		Scanner input = new Scanner(System.in);
+		int num = 5;
 		
 		while(num != 6) {
 		System.out.println("*** Deck Management System Menu ***");
@@ -15,26 +15,45 @@ public class MenuManager {
 		System.out.println("6. Exit");
 		System.out.println("Select one number between 1-6: ");
 		num = input.nextInt();
-		switch(num) {
-		case 1:
-			input.nextLine();//여기서 버퍼를 비워준다는게 뭔뜻이지
-			System.out.print("Deck Name: ");
-			String deckname1 = input.nextLine();
-			System.out.print("Deck Price: ");
-			int deckprice = input.nextInt();
-			System.out.print("Deck Type: ");
-			String decktype = input.next();
-			System.out.print("Avarage Mana Cost: ");
-			double manacost = input.nextDouble();
-			break;
-		case 2:
-		case 3:
-		case 4:
-			input.nextLine();
-			System.out.print("Deck Name: ");
-			String deckname2 = input.nextLine();
+		if (num==1) {
+			addDeck();
 		}
+		else if (num==2) {
+			deleteDeck();
+		}
+		else if (num==3){
+			editDeck();
+		}
+		else if (num==4){
+			viewDeck();
+		}
+		else {
+			continue;
+			}
 		}
 	}
-
+	public static void addDeck() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("deck price");
+		int deckPrice = input.nextInt();
+		System.out.print("deck name");
+		String deckName = input.next();
+		System.out.print("deck type");
+		String decktype = input.next();
+	}
+	public static void deleteDeck() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("deck name");
+		String deckName = input.next();
+	}
+	public static void editDeck() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("deck name");
+		String deckName = input.next();
+	}
+	public static void viewDeck() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("deck name");
+		String deckName = input.next();
+	}
 }
