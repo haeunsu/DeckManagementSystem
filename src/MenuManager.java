@@ -3,29 +3,29 @@ import java.util.Scanner;
 public class MenuManager {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int num = 5;
+		Deckmanager deckmanager = new Deckmanager(input);
 		
-		while(num != 6) {
+		int num = -1;
+		while(num != 5) {
 		System.out.println("*** Deck Management System Menu ***");
 		System.out.println("1. Add Decks");
 		System.out.println("2. Delete Decks");
 		System.out.println("3. Edit Decks");
 		System.out.println("4. View Decks");
-		System.out.println("5. Show a Menu");
-		System.out.println("6. Exit");
-		System.out.println("Select one number between 1-6: ");
+		System.out.println("5. Exit");
+		System.out.println("Select one number between 1-5: ");
 		num = input.nextInt();
 		if (num==1) {
-			addDeck();
+			deckmanager.addDeck();
 		}
 		else if (num==2) {
-			deleteDeck();
+			deckmanager.deleteDeck();
 		}
 		else if (num==3){
-			editDeck();
+			deckmanager.editDeck();
 		}
 		else if (num==4){
-			viewDeck();
+			deckmanager.viewDeck();
 		}
 		else {
 			continue;
@@ -34,26 +34,28 @@ public class MenuManager {
 	}
 	public static void addDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck price");
-		int deckPrice = input.nextInt();
+		System.out.print("deck number");
+		int deckNumber = input.nextInt();
 		System.out.print("deck name");
 		String deckName = input.next();
+		System.out.print("deck price");
+		int deckPrice = input.nextInt();
 		System.out.print("deck type");
 		String decktype = input.next();
 	}
 	public static void deleteDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck name");
-		String deckName = input.next();
+		System.out.print("deck number");
+		int deckNumber = input.nextInt();
 	}
 	public static void editDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck name");
-		String deckName = input.next();
+		System.out.print("deck number");
+		int deckNumber = input.nextInt();
 	}
 	public static void viewDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck name");
-		String deckName = input.next();
+		System.out.print("deck number");
+		int deckNumber = input.nextInt();
 	}
 }
