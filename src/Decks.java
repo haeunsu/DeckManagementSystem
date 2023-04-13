@@ -24,4 +24,5 @@ public class Decks {
 	public void printInfo() {
 		System.out.println("number:" + number + "name:" +name + "price:"+ price +"type:" + type);
 	}
+
 }
