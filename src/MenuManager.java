@@ -34,7 +34,7 @@ public class MenuManager {
 	}
 	public static void addDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck number ");
+		System.out.print("deck number");
 		int deckNumber = input.nextInt();
 		System.out.print("deck name ");
 		String deckName = input.next();
