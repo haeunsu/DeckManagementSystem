@@ -17,7 +17,7 @@ public class Deckmanager {
 		while (kind != 1 && kind !=2 ){
 			System.out.print("1 for Worrior");
 			System.out.print("2 for Shamman");
-			System.out.print("Select num for deck Kind between 1 and 2:");
+			System.out.print("Select num for deck Kind between 1 and 2: ");
 			kind = input.nextInt();
 			if (kind == 1) {
 				deck = new Deck();
@@ -67,30 +67,30 @@ public class Deckmanager {
 			int num = -1;
 			while(num != 5) {
 				System.out.println("*** Deck Management System Menu ***");
-				System.out.println("1. Add Decks");
-				System.out.println("2. Delete Decks");
-				System.out.println("3. Edit Decks");
-				System.out.println("4. View Decks");
-				System.out.println("5. Exit");
+				System.out.println("1. Add Decks ");
+				System.out.println("2. Delete Decks ");
+				System.out.println("3. Edit Decks ");
+				System.out.println("4. View Decks ");
+				System.out.println("5. Exit ");
 				System.out.println("Select one number between 1-5: ");
 				num = input.nextInt();
 				if (num==1) {
-					System.out.print("Deck Number: ");
+					System.out.print(" Deck Number: ");
 					int Number = input.nextInt();
 					deck.setNumber(Number);
 				}
 				else if (num==2) {
-					System.out.print("Deck Name: ");
+					System.out.print(" Deck Name: ");
 					String name = input.next();
 					deck.setName(name);
 				}
 				else if (num==3) {
-					System.out.print("Deck Price: ");
+					System.out.print(" Deck Price: ");
 					int price = input.nextInt();
 					deck.setPrice(price);
 				}
 				else if (num==4) {
-					System.out.print("Deck Type: ");
+					System.out.print(" Deck Type: ");
 					String type = input.next();
 					deck.setType(type);
 				}
