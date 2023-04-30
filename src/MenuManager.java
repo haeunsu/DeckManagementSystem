@@ -34,28 +34,28 @@ public class MenuManager {
 	}
 	public static void addDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck number");
+		System.out.print("deck number ");
 		int deckNumber = input.nextInt();
-		System.out.print("deck name");
+		System.out.print("deck name ");
 		String deckName = input.next();
-		System.out.print("deck price");
+		System.out.print("deck price ");
 		int deckPrice = input.nextInt();
-		System.out.print("deck type");
+		System.out.print("deck type ");
 		String decktype = input.next();
 	}
 	public static void deleteDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck number");
+		System.out.print("deck number ");
 		int deckNumber = input.nextInt();
 	}
 	public static void editDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck number");
+		System.out.print("deck number ");
 		int deckNumber = input.nextInt();
 	}
 	public static void viewDeck() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("deck number");
+		System.out.print("deck number ");
 		int deckNumber = input.nextInt();
 	}
 }
