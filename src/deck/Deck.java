@@ -87,7 +87,7 @@ public class Deck {
 			break;
 		default:	
 		}
-		System.out.println("kind: " + skind + "number:" + number + " name:" +name + " price:"+ price +" type:" + type);
+		System.out.println("kind:" + skind + " number:" + number + " name:" +name + " price:"+ price +" type:" + type);
 	}
 	
 	public void getUserInput(Scanner input) {
