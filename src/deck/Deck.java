@@ -13,17 +13,22 @@ public class Deck {
 	public Deck() {
 	}
 	
+	public Deck(DeckKind kind) {
+		this.kind = kind;
+	}
+	
 	public Deck(String name, int number) {
 		this.name = name;
 		this.number = number;
 	}
 	
-	public Deck(int number, String name, int price, String type) {
+	public Deck(DeckKind kind, int number, String name, int price, String type) {
+		this.kind = kind;
 		this.number = number;
 		this.name = name;
 		this.price = price;
 		this.type = type;
-	}
+	} 
 	
 	public DeckKind getKind() {
 		return kind;
@@ -66,7 +71,23 @@ public class Deck {
 	}
 	
 	public void printInfo() {
-		System.out.println("number:" + number + "name:" +name + "price:"+ price +"type:" + type);
+		String skind = "none";
+		switch(this.kind) {
+		case Warrior:
+			skind = "War.";
+			break;
+		case Shaman:
+			skind = "Sha.";
+			break;
+		case Paladin:
+			skind = "Pal.";
+			break;
+		case Mage:
+			skind = "Mag.";
+			break;
+		default:	
+		}
+		System.out.println("kind: " + skind + "number:" + number + " name:" +name + " price:"+ price +" type:" + type);
 	}
 	
 	public void getUserInput(Scanner input) {

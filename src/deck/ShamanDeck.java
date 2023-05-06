@@ -3,6 +3,10 @@ package deck;
 import java.util.Scanner;
 
 public class ShamanDeck extends Deck {
+	
+	public ShamanDeck(DeckKind kind) {
+		super(kind);
+	}
 
 	public void getUserInput(Scanner input) {
 		System.out.print("deck number: ");
