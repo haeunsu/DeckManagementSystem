@@ -9,7 +9,7 @@ public class ShamanDeck extends Deck {
 	}
 
 	public void getUserInput(Scanner input) {
-		System.out.print("deck number: ");
+		System.out.print("deck number:");
 		int number = input.nextInt();
 		this.setNumber(number);
 
