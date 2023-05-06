@@ -75,7 +75,7 @@ public class MageDeck extends Deck {
 			break;
 		default:	
 		}
-		System.out.println("kind: " + skind + "number:" + number + " name:" +name + " price:"+ price +" type:" + type +"40XL name: "+ renathalname+ "40XL type: "+renathaltype);
+		System.out.println("kind: " + skind + "number:" + number + " name:" +name + " price:"+ price +" type:" + type +"40XL name: " + renathalname+ "40XL type: " +renathaltype);
 	}
 
 }
