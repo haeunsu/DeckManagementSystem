@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import deck.Deck;
+import deck.DeckKind;
+import deck.MageDeck;
 import deck.ShamanDeck;
 
 public class Deckmanager {
@@ -15,18 +17,25 @@ public class Deckmanager {
 		int kind = 0;
 		Deck deck;
 		while (kind != 1 && kind !=2 ){
-			System.out.print("1 for Worrior");
-			System.out.print("2 for Shamman");
-			System.out.print("Select num for deck Kind between 1 and 2: ");
+			System.out.println("1 for Worrior ");
+			System.out.println("2 for Shamman ");
+			System.out.println("3 for Mage ");
+			System.out.print("Select num 1, 2, or 3 for Deck Kind: ");
 			kind = input.nextInt();
 			if (kind == 1) {
-				deck = new Deck();
+				deck = new Deck(DeckKind.Warrior);
 				deck.getUserInput(input);
 				decks.add(deck);
 				break;
 			}
 			else if (kind == 2) {
-				deck = new ShamanDeck();
+				deck = new ShamanDeck(DeckKind.Shaman);
+				deck.getUserInput(input);
+				decks.add(deck);
+				break;
+			}
+			else if (kind == 3) {
+				deck = new MageDeck(DeckKind.Mage);
 				deck.getUserInput(input);
 				decks.add(deck);
 				break;
