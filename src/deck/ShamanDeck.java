@@ -23,7 +23,7 @@ public class ShamanDeck extends Deck {
 				this.setName(name);
 				break;
 			} else if (answer == 'n' || answer == 'N') {
-				this.setName("");
+				this.setName(" ");
 				break;
 			} else {
 
