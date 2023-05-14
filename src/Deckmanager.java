@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import deck.Deck;
+import deck.DeckInput;
 import deck.DeckKind;
 import deck.MageDeck;
 import deck.ShamanDeck;
+import deck.WorriorDeck;
 
 public class Deckmanager {
-	ArrayList<Deck> decks = new ArrayList<Deck>();
+	ArrayList<DeckInput> decks = new ArrayList<DeckInput>();
 	Scanner input;
 	
 	Deckmanager(Scanner input){
@@ -15,7 +17,7 @@ public class Deckmanager {
 	
 	public void addDeck() {
 		int kind = 0;
-		Deck deck;
+		DeckInput DeckInput;
 		while (kind != 1 && kind !=2 ){
 			System.out.println("1 for Worrior ");
 			System.out.println("2 for Shamman ");
@@ -23,21 +25,21 @@ public class Deckmanager {
 			System.out.print("Select num 1, 2, or 3 for Deck Kind: ");
 			kind = input.nextInt();
 			if (kind == 1) {
-				deck = new Deck(DeckKind.Warrior);
-				deck.getUserInput(input);
-				decks.add(deck);
+				DeckInput = new WorriorDeck(DeckKind.Warrior);
+				DeckInput.getUserInput(input);
+				decks.add(DeckInput);
 				break;
 			}
 			else if (kind == 2) {
-				deck = new ShamanDeck(DeckKind.Shaman);
-				deck.getUserInput(input);
-				decks.add(deck);
+				DeckInput = new ShamanDeck(DeckKind.Shaman);
+				DeckInput.getUserInput(input);
+				decks.add(DeckInput);
 				break;
 			}
 			else if (kind == 3) {
-				deck = new MageDeck(DeckKind.Mage);
-				deck.getUserInput(input);
-				decks.add(deck);
+				DeckInput = new MageDeck(DeckKind.Mage);
+				DeckInput.getUserInput(input);
+				decks.add(DeckInput);
 				break;
 			}
 			else {
@@ -71,8 +73,8 @@ public class Deckmanager {
 		System.out.print("deck number: ");
 		int deckNumber = input.nextInt();
 		for (int i = 0; i<decks.size(); i++) {
-			Deck deck = decks.get(i);
-			if(deck.getNumber() == deckNumber) {
+			DeckInput deckInput = decks.get(i);
+			if(deckInput.getNumber() == deckNumber) {
 			int num = -1;
 			while(num != 5) {
 				System.out.println("*** Deck Management System Menu ***");
@@ -86,22 +88,22 @@ public class Deckmanager {
 				if (num==1) {
 					System.out.print(" Deck Number: ");
 					int Number = input.nextInt();
-					deck.setNumber(Number);
+					deckInput.setNumber(Number);
 				}
 				else if (num==2) {
 					System.out.print(" Deck Name: ");
 					String name = input.next();
-					deck.setName(name);
+					deckInput.setName(name);
 				}
 				else if (num==3) {
 					System.out.print(" Deck Price: ");
 					int price = input.nextInt();
-					deck.setPrice(price);
+					deckInput.setPrice(price);
 				}
 				else if (num==4) {
 					System.out.print(" Deck Type: ");
 					String type = input.next();
-					deck.setType(type);
+					deckInput.setType(type);
 				}
 				else {
 					continue;

@@ -2,7 +2,7 @@ package deck;
 
 import java.util.Scanner;
 
-public class MageDeck extends Deck {
+public class MageDeck extends Deck implements DeckInput{
 	
 	protected String renathalname;
 	protected String renathaltype;
