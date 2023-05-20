@@ -91,16 +91,16 @@ public class Deckmanager {
 				num = input.nextInt();
 				switch(num) {
 				case 1:
-					setDeckNumber(deck, input);
+					deck.setDeckNumber(input);
 					break;
 				case 2:
-					setDeckName(deck, input);
+					deck.setDeckName(input);
 					break;
 				case 3:
-					setDeckPrice(deck, input);
+					deck.setDeckPrice(input);
 					break;
 				case 4:
-					setDeckType(deck, input);
+					deck.setDeckType(input);
 					break;
 				default:
 					continue;
@@ -119,29 +119,7 @@ public class Deckmanager {
 		}
 	}
 	
-	public void setDeckNumber(DeckInput deck, Scanner input) {
-		System.out.print(" Deck Number: ");
-		int Number = input.nextInt();
-		deck.setNumber(Number);
-	}
 	
-	public void setDeckName(DeckInput deck, Scanner input) {
-		System.out.print(" Deck Name: ");
-		String name = input.next();
-		deck.setName(name);
-	}
-	
-	public void setDeckPrice(DeckInput deck, Scanner input) {
-		System.out.print(" Deck Price: ");
-		int price = input.nextInt();
-		deck.setPrice(price);
-	}
-	
-	public void setDeckType(DeckInput deck, Scanner input) {
-		System.out.print(" Deck Type: ");
-		String type = input.next();
-		deck.setType(type);
-	}
 	
 	public void showEditMenu() {
 		System.out.println("*** Deck Management System Menu ***");

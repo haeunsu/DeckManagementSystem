@@ -2,7 +2,7 @@ package deck;
 
 import java.util.Scanner;
 
-public abstract class Deck {
+public abstract class Deck implements DeckInput{
 	
 	protected DeckKind kind = DeckKind.Warrior;
 	protected int number;
@@ -71,5 +71,49 @@ public abstract class Deck {
 	}
 	
 	public abstract void printInfo();
+	
+	public void setDeckNumber(Scanner input) {
+		System.out.print(" Deck Number: ");
+		int Number = input.nextInt();
+		this.setNumber(Number);
+	}
+	
+	public void setDeckName(Scanner input) {
+		System.out.print(" Deck Name: ");
+		String name = input.next();
+		this.setName(name);
+	}
+	
+	public void setDeckPrice(Scanner input) {
+		System.out.print(" Deck Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
+	}
+	
+	public void setDeckType(Scanner input) {
+		System.out.print(" Deck Type: ");
+		String type = input.next();
+		this.setType(type);
+	}
+	
+	public String getKindString() {
+		String skind = "none";
+		switch(this.kind) {
+		case Warrior:
+			skind = "War.";
+			break;
+		case Shaman:
+			skind = "Sha.";
+			break;
+		case Paladin:
+			skind = "Pal.";
+			break;
+		case Mage:
+			skind = "Mag.";
+			break;
+		default:	
+		}
+		return skind;
+	}
 
 }

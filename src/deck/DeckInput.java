@@ -17,6 +17,14 @@ public interface DeckInput {
 	public void setType(String type);
 
 	public void printInfo();
+	
+	public void setDeckNumber(Scanner input);
+	
+	public void setDeckName(Scanner input);
+	
+	public void setDeckPrice(Scanner input);
+	
+	public void setDeckType(Scanner input);
 
 
 }
