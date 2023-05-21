@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import deck.Deck;
 import deck.DeckInput;
@@ -19,6 +20,7 @@ public class Deckmanager {
 		int kind = 0;
 		DeckInput deckInput;
 		while (kind != 1 && kind !=2 ){
+			try {
 			System.out.println("1 for Worrior ");
 			System.out.println("2 for Shamman ");
 			System.out.println("3 for Mage ");
@@ -44,6 +46,14 @@ public class Deckmanager {
 			}
 			else {
 				System.out.print("Select num for Deck Kind between 1 and 2:");
+			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("please put an integer between 1 and 3!");
+				if (input.hasNext()) {
+					input.next();
+				}
+				kind = -1;
 			}
 		}
 

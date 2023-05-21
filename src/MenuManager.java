@@ -1,32 +1,13 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuManager {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Deckmanager deckmanager = new Deckmanager(input);
+		
+		selectMenu(input, deckmanager);
 
-		int num = -1;
-		while (num != 5) {
-			showMenu();
-			num = input.nextInt();
-			switch (num) {
-			case 1:
-				deckmanager.addDeck();
-				break;
-			case 2:
-				deckmanager.deleteDeck();
-				break;
-			case 3:
-				deckmanager.editDeck();
-				break;
-			case 4:
-				deckmanager.viewDeck();
-				break;
-			default:
-				continue;
-			}
-
-		}
 	}
 //	public static void addDeck() {
 //		Scanner input = new Scanner(System.in);
@@ -54,6 +35,39 @@ public class MenuManager {
 //		System.out.print("deck number ");
 //		int deckNumber = input.nextInt();
 //	}
+
+	public static void selectMenu(Scanner input, Deckmanager deckmanager) {
+		int num = -1;
+		while (num != 5) {
+			try {
+			showMenu();
+			num = input.nextInt();
+			switch (num) {
+			case 1:
+				deckmanager.addDeck();
+				break;
+			case 2:
+				deckmanager.deleteDeck();
+				break;
+			case 3:
+				deckmanager.editDeck();
+				break;
+			case 4:
+				deckmanager.viewDeck();
+				break;
+			default:
+				continue;
+			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("please put an integer between 1 and 5!");
+				if (input.hasNext()) {
+					input.next();
+				}
+				num = -1;
+			}
+		}
+	}
 
 	public static void showMenu() {
 		System.out.println("*** Deck Management System Menu ***");
