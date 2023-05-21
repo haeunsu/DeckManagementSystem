@@ -2,6 +2,8 @@ package deck;
 
 import java.util.Scanner;
 
+import exception.DeckTypeFormatException;
+
 public interface DeckInput {
 	
 	public int getNumber();
@@ -14,7 +16,7 @@ public interface DeckInput {
 
 	public void setPrice(int price);
 
-	public void setType(String type);
+	public void setType(String type) throws DeckTypeFormatException;
 
 	public void printInfo();
 	

@@ -2,6 +2,8 @@ package deck;
 
 import java.util.Scanner;
 
+import exception.DeckTypeFormatException;
+
 public abstract class Deck implements DeckInput{
 	
 	protected DeckKind kind = DeckKind.Warrior;
@@ -66,7 +68,11 @@ public abstract class Deck implements DeckInput{
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(String type) throws DeckTypeFormatException{
+		if (!type.contains("#")&&!type.equals("")) {
+			throw new DeckTypeFormatException();
+		}
+		
 		this.type = type;
 	}
 	
@@ -91,9 +97,16 @@ public abstract class Deck implements DeckInput{
 	}
 	
 	public void setDeckType(Scanner input) {
+		String type = "";
+		while (!type.contains("#")) {
 		System.out.print(" Deck Type: ");
-		String type = input.next();
-		this.setType(type);
+		type = input.next();
+		try {
+			this.setType(type);
+		} catch (DeckTypeFormatException e) {
+			System.out.println("When specifying the deck type, put # in front. ");
+		}
+		}
 	}
 	
 	public String getKindString() {
