@@ -1,16 +1,22 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import deck.Deck;
+
 import deck.DeckInput;
 import deck.DeckKind;
 import deck.MageDeck;
 import deck.ShamanDeck;
 import deck.WorriorDeck;
 
-public class Deckmanager {
+public class Deckmanager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8249050541592667619L;
+	
 	ArrayList<DeckInput> decks = new ArrayList<DeckInput>();
-	Scanner input;
+	transient Scanner input;
 	
 	Deckmanager(Scanner input){
 		this.input = input;

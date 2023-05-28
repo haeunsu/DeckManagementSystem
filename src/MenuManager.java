@@ -1,3 +1,9 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import log.EventLogger;
@@ -7,10 +13,15 @@ public class MenuManager {
 
 	
 	public static void main(String[] args) {
+		
 		Scanner input = new Scanner(System.in);
-		Deckmanager deckmanager = new Deckmanager(input);
+		Deckmanager deckmanager = getObject("deckmanager.ser");
+		if (deckmanager == null) {
+			deckmanager = new Deckmanager(input);
+		}
 		
 		selectMenu(input, deckmanager);
+		putObject(deckmanager, "deckmanager.ser");
 
 	}
 
@@ -60,5 +71,53 @@ public class MenuManager {
 		System.out.println("5. Exit");
 		System.out.println("Select one number between 1-5: ");
 	}
+	
+	public static Deckmanager getObject(String filename) {
+		Deckmanager deckmanager = null;
+		
+		
+		try {
+			FileInputStream file = new FileInputStream(filename);
+			ObjectInputStream in = new ObjectInputStream(file);
+			
+			deckmanager = (Deckmanager)in.readObject();
+			
+			in.close();
+			file.close();
+
+		} catch (FileNotFoundException e) {
+			return deckmanager;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return deckmanager;
+	}
+	
+	public static void putObject(Deckmanager deckmanager ,String filename) {
+		
+		try {
+			FileOutputStream file = new FileOutputStream(filename);
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			
+			out.writeObject(deckmanager);
+			
+			out.close();
+			file.close();
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 }
+

@@ -1,11 +1,16 @@
 package deck;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.DeckTypeFormatException;
 
-public abstract class Deck implements DeckInput{
+public abstract class Deck implements DeckInput, Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6559295725464435489L;
 	protected DeckKind kind = DeckKind.Warrior;
 	protected int number;
 	protected int price;
