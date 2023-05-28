@@ -15,8 +15,8 @@ public class MageDeck extends HearthstoneDeck {
 	
 	public void getUserInput(Scanner input) {
 		setDeckNumber(input);
-		setDeckName(input);
 		setDeckNamewithYN(input);
+		setDeckName(input);
 		setDeckPrice(input);
 		setDeckType(input);
 	}

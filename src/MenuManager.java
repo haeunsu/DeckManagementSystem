@@ -1,7 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import log.EventLogger;
 
 public class MenuManager {
+	static EventLogger logger = new EventLogger("log.txt");
+
+	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Deckmanager deckmanager = new Deckmanager(input);
@@ -9,32 +13,6 @@ public class MenuManager {
 		selectMenu(input, deckmanager);
 
 	}
-//	public static void addDeck() {
-//		Scanner input = new Scanner(System.in);
-//		System.out.print("deck number ");
-//		int deckNumber = input.nextInt();
-//		System.out.print("deck name ");
-//		String deckName = input.next();
-//		System.out.print("deck price ");
-//		int deckPrice = input.nextInt();
-//		System.out.print("deck type ");
-//		String decktype = input.next();
-//	}
-//	public static void deleteDeck() {
-//		Scanner input = new Scanner(System.in);
-//		System.out.print("deck number ");
-//		int deckNumber = input.nextInt();
-//	}
-//	public static void editDeck() {
-//		Scanner input = new Scanner(System.in);
-//		System.out.print("deck number ");
-//		int deckNumber = input.nextInt();
-//	}
-//	public static void viewDeck() {
-//		Scanner input = new Scanner(System.in);
-//		System.out.print("deck number ");
-//		int deckNumber = input.nextInt();
-//	}
 
 	public static void selectMenu(Scanner input, Deckmanager deckmanager) {
 		int num = -1;
@@ -45,15 +23,19 @@ public class MenuManager {
 			switch (num) {
 			case 1:
 				deckmanager.addDeck();
+				logger.log("add a deck");
 				break;
 			case 2:
 				deckmanager.deleteDeck();
+				logger.log("dlete a deck");
 				break;
 			case 3:
 				deckmanager.editDeck();
+				logger.log("edit a deck");
 				break;
 			case 4:
 				deckmanager.viewDeck();
+				logger.log("view a deck");
 				break;
 			default:
 				continue;

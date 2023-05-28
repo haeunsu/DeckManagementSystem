@@ -1,0 +1,4 @@
+5월 28, 2023 3:23:43 오후 log.EventLogger log
+INFO: add a deck
+5월 28, 2023 3:24:17 오후 log.EventLogger log
+INFO: view a deck
