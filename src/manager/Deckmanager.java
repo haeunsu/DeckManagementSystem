@@ -1,8 +1,10 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import deck.Deck;
 import deck.DeckInput;
 import deck.DeckKind;
 import deck.MageDeck;
@@ -135,7 +137,13 @@ public class Deckmanager implements Serializable{
 		}
 	}
 	
+	public int size() {
+		return decks.size();
+	}
 	
+	public DeckInput get(int index) {
+		return (Deck) decks.get(index);
+	}
 	
 	public void showEditMenu() {
 		System.out.println("*** Deck Management System Menu ***");
@@ -147,5 +155,7 @@ public class Deckmanager implements Serializable{
 		System.out.println("Select one number between 1-5: ");
 		
 	}
+
+	
 
 }

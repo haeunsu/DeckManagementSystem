@@ -3,19 +3,26 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import manager.Deckmanager;
+
 public class WindowFrame extends JFrame{
+	
+	Deckmanager deckmanager;
 	
 	MenuSelection menuselection;
 	DeckAdder deckadder;
 	DeckViewer deckviewer;
+	
 
-	public WindowFrame() {
-		this.menuselection = new MenuSelection(this);
-		this.deckadder = new DeckAdder(this);
-		this.deckviewer = new DeckViewer(this);
-		
+	public WindowFrame(Deckmanager deckmanager) {
 		this.setSize(500,300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("My Frame");
+		this.deckmanager = deckmanager;
+		menuselection = new MenuSelection(this);
+		deckadder = new DeckAdder(this);
+		deckviewer = new DeckViewer(this, this.deckmanager);
+		
 		
 		this.setupPanel(menuselection);
 		
