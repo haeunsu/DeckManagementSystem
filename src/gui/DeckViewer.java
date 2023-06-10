@@ -1,13 +1,19 @@
 package gui;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class DeckViewer extends JFrame{
+public class DeckViewer extends JPanel{
+	
+	WindowFrame frame;
 
-	public DeckViewer() {
+
+	public DeckViewer(WindowFrame frame) {
+		this.frame = frame;
+		
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("NUMBER");
 		model.addColumn("NAME");
@@ -20,9 +26,6 @@ public class DeckViewer extends JFrame{
 		
 		this.add(sp);
 		
-		this.setSize(300, 300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
 	}
 
 }
